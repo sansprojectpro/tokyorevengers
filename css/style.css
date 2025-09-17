@@ -1,0 +1,415 @@
+/* css/style.css - Nuansa Anime (Disesuaikan untuk Komik Tunggal) */
+
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+/* ... sisa CSS Anda ... */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #ffeb3b;
+}
+
+header h1 { /* Ini untuk judul utama di header */
+    margin: 0;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 2.8em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+header a { /* Jika judul header adalah link */
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 25px;
+    max-width: 900px; /* Sedikit lebih ramping untuk fokus ke satu komik */
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid #d1e0ff;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #3a3a3a;
+    color: #e0e0e0;
+    margin-top: 30px;
+    border-top: 3px solid #6a11cb;
+}
+
+/* Halaman Info Komik Tunggal (index.html) */
+.single-comic-info {
+    display: flex;
+    flex-direction: column; /* Tumpuk di mobile */
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 35px;
+    padding: 25px;
+    background: #e6f7ff; /* Latar biru muda */
+    border-radius: 10px;
+    text-align: center; /* Teks rata tengah di mobile */
+}
+
+.single-comic-info img#comic-cover {
+    max-width: 280px; /* Ukuran bisa disesuaikan */
+    width: 100%; /* Agar responsif */
+    height: auto;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.single-comic-info .info-text {
+    max-width: 600px;
+}
+
+.single-comic-info h2#comic-title-detail { /* Judul komik di bawah cover */
+    margin-top: 0;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 2.2em;
+    color: #6a11cb; /* Ungu */
+    margin-bottom: 15px;
+}
+
+.single-comic-info p#comic-description {
+    font-size: 1.05em; /* Sedikit lebih besar untuk deskripsi */
+    color: #444;
+    line-height: 1.7;
+    text-align: left; /* Deskripsi rata kiri-kanan agar lebih rapi */
+    text-align: justify;
+}
+
+.chapter-list-section h3 { /* Judul "Daftar Chapter" */
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: #2575fc;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.chapter-list-section ul#chapters { /* Styling untuk daftar chapter */
+    list-style: none;
+    padding: 0;
+    max-width: 700px; /* Batasi lebar daftar chapter */
+    margin: 0 auto; /* Pusatkan */
+}
+
+.chapter-list-section li {
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #cceeff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease;
+}
+.chapter-list-section li a {
+    display: block;
+    padding: 15px 25px; /* Padding lebih besar */
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.1em; /* Ukuran font chapter lebih besar */
+    border-radius: 8px;
+    transition: color 0.3s ease, letter-spacing 0.3s ease, background-color 0.3s ease;
+}
+
+.chapter-list-section li a:hover {
+    background-color: #ffeb3b;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+/* Halaman Baca Komik (reader.html) - Sebagian besar sama */
+.comic-reader {
+    text-align: center;
+}
+
+.comic-reader h2#chapter-title-reader { /* Judul chapter di halaman reader */
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: #2575fc;
+    margin-bottom: 15px;
+    font-size: 1.7em;
+}
+
+#comic-panels img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border: 3px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background-color: #fff;
+}
+
+.navigation {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation button, .navigation a {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 700;
+    box-shadow: 0 3px 7px rgba(229, 46, 113, 0.4);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.navigation button:disabled {
+    background: #b0b0b0;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.navigation button:hover:not(:disabled), .navigation a:hover {
+    background: linear-gradient(45deg, #e52e71, #ff8a00);
+    transform: translateY(-2px);
+}
+.navigation span#page-info {
+    font-weight: 700;
+    color: #555;
+    background-color: #fff;
+    padding: 8px 15px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.chapter-navigation-reader { /* Dulu .chapter-navigation */
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 2px dashed #6a11cb;
+    display: flex;
+    justify-content: space-between; /* Agar ada ruang di tengah */
+    align-items: center;
+    flex-wrap: wrap; /* Agar responsif jika tombol terlalu banyak */
+    gap: 10px;
+}
+.chapter-navigation-reader a {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #4caf50, #8bc34a);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+    transition: transform 0.2s ease, background 0.3s ease;
+    text-align: center; /* Pastikan teks di tengah */
+}
+.chapter-navigation-reader a:hover {
+    background: linear-gradient(to right, #8bc34a, #4caf50);
+    transform: translateY(-2px);
+}
+.chapter-navigation-reader a#back-to-home {
+    background: #78909c;
+    flex-grow: 1; /* Tombol tengah bisa lebih besar jika ada ruang */
+    max-width: 250px; /* Batasi lebar tombol tengah */
+    margin-left: auto;
+    margin-right: auto;
+}
+.chapter-navigation-reader a#back-to-home:hover {
+    background: #546e7a;
+}
+.chapter-navigation-reader a#prev-chapter,
+.chapter-navigation-reader a#next-chapter {
+    flex-basis: auto; /* Biarkan ukuran berdasarkan konten */
+}
+
+
+/* Media Queries untuk Responsivitas */
+@media (min-width: 768px) {
+    .single-comic-info {
+        flex-direction: row; /* Cover di kiri, teks di kanan untuk desktop */
+        text-align: left; /* Teks rata kiri di desktop */
+        align-items: flex-start; /* Ratakan item ke atas */
+    }
+    .single-comic-info img#comic-cover {
+        max-width: 320px; /* Cover sedikit lebih besar di desktop */
+        min-width: 250px; /* Agar tidak terlalu kecil */
+    }
+    .single-comic-info .info-text {
+        margin-left: 25px; /* Jarak antara cover dan teks */
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    .single-comic-info {
+        padding: 15px;
+    }
+    .single-comic-info h2#comic-title-detail {
+        font-size: 1.8em;
+    }
+     .single-comic-info p#comic-description {
+        font-size: 0.95em;
+    }
+    .chapter-list-section li a {
+        padding: 12px 18px;
+        font-size: 1em;
+    }
+    .navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navigation span#page-info {
+        order: -1;
+        margin-bottom: 10px;
+    }
+    .chapter-navigation-reader {
+        flex-direction: column; /* Tumpuk navigasi chapter di layar kecil */
+        align-items: center; /* Pusatkan tombol */
+    }
+    .chapter-navigation-reader a {
+        width: 80%; /* Tombol navigasi chapter lebih lebar */
+        margin: 5px 0 !important; /* Atur margin */
+    }
+}
+
+
+/* ... (CSS Footer Anda yang sudah ada) ... */
+
+.contact-info {
+    margin-top: 10px;
+    display: flex; /* Membuat item di dalamnya (paragraf dan link) bisa diatur */
+    flex-direction: column; /* Tumpuk p dan link-container secara vertikal */
+    align-items: center; /* Pusatkan secara horizontal */
+}
+
+.contact-info p {
+    margin: 0 0 12px 0; /* Jarak lebih besar di bawah teks "Terhubung dengan kami" */
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+.contact-info .social-links-container { /* Wadah baru untuk link ikon */
+    display: flex; /* Sejajarkan ikon secara horizontal */
+    gap: 20px; /* Jarak antar ikon */
+}
+
+.contact-info a { /* Styling umum untuk link ikon */
+    color: #ffeb3b; /* Warna default ikon (kuning) */
+    text-decoration: none;
+    font-size: 1.8em; /* Ukuran dasar ikon, bisa disesuaikan */
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px; /* Sedikit padding agar area klik lebih besar */
+    display: inline-block; /* Penting untuk transform */
+}
+
+.contact-info a:hover {
+    transform: scale(1.25) translateY(-2px); /* Efek hover yang lebih menonjol */
+}
+
+/* Warna spesifik per ikon & hovernya */
+
+/* Facebook */
+.contact-info a i.fa-facebook-square {
+    color: #1877F2; /* Biru Facebook */
+}
+.contact-info a:hover i.fa-facebook-square {
+    color: #4a90e2; /* Biru Facebook lebih terang saat hover */
+}
+
+/* WhatsApp */
+.contact-info a i.fa-whatsapp {
+    color: #25D366; /* Hijau WhatsApp */
+}
+.contact-info a:hover i.fa-whatsapp {
+    color: #48e07b; /* Hijau WhatsApp lebih terang saat hover */
+}
+
+/* Instagram */
+.contact-info a i.fa-instagram {
+    /* Cara 1: Warna solid sederhana (jika gradient sulit/tidak diinginkan) */
+    /* color: #E1306C; */
+
+    /* Cara 2: Mencoba efek gradien (mungkin perlu penyesuaian browser) */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Teks (ikon) dibuat transparan agar gradien terlihat */
+    /* Pastikan ada fallback jika gradien tidak didukung */
+    /* fallback color jika gradien gagal: */
+    /* color: #E1306C;  */
+}
+.contact-info a:hover i.fa-instagram {
+    /* Saat hover, kita bisa hilangkan gradien dan beri warna solid agar efek transform terlihat jelas */
+    background: none;
+    -webkit-background-clip: initial; /* Reset background-clip */
+    -moz-background-clip: initial;
+    -ms-background-clip: initial;
+    background-clip: initial;
+    color: #c32aa3; /* Warna pink Instagram lebih terang */
+}
+
+/* Twitter/X (Contoh Tambahan) */
+.contact-info a i.fa-twitter,
+.contact-info a i.fa-x-twitter { /* Font Awesome mungkin menggunakan fa-x-twitter untuk ikon X baru */
+    color: #1DA1F2; /* Biru Twitter lama, atau #000000 untuk X baru */
+}
+.contact-info a:hover i.fa-twitter,
+.contact-info a:hover i.fa-x-twitter {
+    color: #55acee; /* Atau abu-abu terang untuk X */
+}
+
+/* Email (Contoh Tambahan) */
+.contact-info a i.fa-envelope {
+    color: #f0ad4e; /* Oranye, contoh */
+}
+.contact-info a:hover i.fa-envelope {
+    color: #f3c27d;
+}
+
+/* Penyesuaian untuk .footer-content jika menggunakan ikon */
+@media (min-width: 600px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; /* Pastikan semua item di footer sejajar vertikal */
+    }
+    .contact-info {
+        margin-top: 0;
+        /* text-align: right;  -- Tidak perlu jika ikon sudah diatur dengan flex */
+        flex-direction: row; /* Sejajarkan "Terhubung dengan kami:" dan ikon-ikonnya */
+        align-items: center;
+        gap: 15px; /* Jarak antara "Terhubung dengan kami" dan grup ikon */
+    }
+    .contact-info p {
+        margin-bottom: 0; /* Hapus margin bawah jika sudah sejajar */
+        font-size: 1em; /* Sesuaikan ukuran jika perlu */
+    }
+    .contact-info .social-links-container {
+        gap: 15px; /* Jarak antar ikon di layar besar */
+    }
+}
+

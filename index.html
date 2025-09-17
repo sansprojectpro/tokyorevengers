@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Sans Anime</title> <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.jpg" type="image/png">
+</head>
+<body>
+    <header>
+        <h1 id="comic-main-title"></h1>
+    </header>
+    <main>
+        <section class="single-comic-info">
+            <img id="comic-cover" src="" alt="Cover Komik">
+            <div class="info-text">
+                <h2 id="comic-title-detail"></h2>
+                <p id="comic-description"></p>
+            </div>
+<a href="https://saweria.co/Sanjayadtm" target="_blank" rel="noopener noreferrer" class="btn secondary-btn donate-header-btn">
+  Donasi
+</a>
+
+<style>
+  .donate-header-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #ff7b00, #ff3c00);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .donate-header-btn:hover {
+    background: linear-gradient(135deg, #ff3c00, #ff7b00);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  }
+
+  .donate-header-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  }
+</style>
+        </section>
+        <section class="chapter-list-section">
+            <h3>Daftar Chapter</h3>
+              <p>Informasi penting: Jika Ingin Melihat Comic Lainnya Bisa <br>
+              Hubungi Kami Di LIVECHAT, Yang sudah tersedia <br>
+              Di Pojok Kanan Bawah, kami<br>
+              akan memberikan link comic anime yang anda inginkan</p>
+            <ul id="chapters">
+                </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="contact-info">
+    <p>Terhubung dengan kami:</p>
+    <a href="https://www.facebook.com/profile.php?id=61581153383825" target="_blank" title="Facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-square"></i>
+        </a>
+    <a href="https://wa.me/6281376014684" target="_blank" title="WhatsApp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        </a>
+    <a href="https_URL_INSTAGRAM_ANDA" target="_blank" title="Instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+    </footer>
+
+    <script>
+        // Data untuk komik tunggal Anda
+        const comicData = {
+            mainTitle: "Comic Sans Anime", // Judul besar di header
+            title: "Tokyo Revengers", // Judul di bawah cover
+            description: "Menonton berita, Takemichi Hanagaki mengetahui bahwa pacarnya dari sekolah menengah, Hinata Tachibana, telah meninggal. Satu-satunya pacar yang pernah dimilikinya baru saja dibunuh oleh kelompok jahat yang dikenal sebagai Tokyo Manji Gang. Dia tinggal di apartemen jelek dengan dinding tipis, dan bosnya yang berusia enam tahun lebih muda memperlakukannya seperti orang idiot. Ditambah lagi, dia seorang perjaka akut … Di puncak kehidupannya yang paling bawah, dia tiba-tiba melompati waktu dua belas tahun ke masa SMPnya !! Untuk menyelamatkan Hinata, dan mengubah kehidupan yang dihabiskannya dengan melarikan diri, Takemichi yang putus asa harus mengincar…",
+            cover: "images/my_comic/cover.jpg", // Sesuaikan path ke cover Anda
+            chapters: [
+                {
+                    title: "Chapter 1: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-1/", // Path ke folder chapter
+                    pageCount: 66,                           // Jumlah halaman di chapter ini
+                    // pagePrefix: "page", // Hapus atau kosongkan pagePrefix
+                    pageNameSuffix: ".kiryuu.id",         // Suffix baru setelah nomor halaman
+                    pageExtension: "jpg"                    // Ekstensi file
+                },
+                {
+                    title: "Chapter 2: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-2/",
+                    pageCount: 46,
+                    // pagePrefix: "panel_", // Hapus atau kosongkan pagePrefix
+                    pageNameSuffix: ".kiryuu.id",     // Contoh suffix lain
+                    pageExtension: "jpg"
+                },
+                {
+                    title: "Chapter 3: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-3/",
+                    pageCount: 28,
+                    pageNameSuffix: ".kiryuu.id",          // Contoh suffix lain lagi
+                    pageExtension: "jpg"
+                },
+                {
+                    title: "Chapter 4: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-4/",
+                    pageCount: 24,
+                    pageNameSuffix: ".kiryuu.id",          // Contoh suffix lain lagi
+                    pageExtension: "jpg"
+                },
+                {
+                    title: "Chapter 5: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-5/",
+                    pageCount: 30,
+                    pageNameSuffix: ".kiryuu.id",          // Contoh suffix lain lagi
+                    pageExtension: "jpg"
+                },
+                {
+                    title: "Chapter 6: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-6/",
+                    pageCount: 24,
+                    pageNameSuffix: ".kiryuu.id",          // Contoh suffix lain lagi
+                    pageExtension: "jpg"
+                },
+                {
+                    title: "Chapter 7: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-7/",
+                    pageCount: 23,
+                    pageNameSuffix: ".kiryuu.id",          // Contoh suffix lain lagi
+                    pageExtension: "jpg"
+                },
+                {
+                    title: "Chapter 8: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-8/",
+                    pageCount: 24,
+                    pageNameSuffix: ".kiryuu.id",          // Contoh suffix lain lagi
+                    pageExtension: "jpg"
+                },
+                {
+                    title: "Chapter 9: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-9/",
+                    pageCount: 15,
+                    pageNameSuffix: ".kiryuu.id",          // Contoh suffix lain lagi
+                    pageExtension: "jpg"
+                },
+                {
+                    title: "Chapter 10: Tokyo Revengers",
+                    pagesPath: "images/my_comic/tokyo-revengers-chapter-10/",
+                    pageCount: 19,
+                    pageNameSuffix: ".kiryuu.id",          // Contoh suffix lain lagi
+                    pageExtension: "jpg"
+                },
+                {
+                    title: "Chapter 11: Update setiap hari Senin next 11-20",
+                    pagesPath: "images/my_comic/next/",
+                    pageCount: 0,
+                    pageNameSuffix: ".kiryuu.id",          // Contoh suffix lain lagi
+                    pageExtension: "jpg"
+                }
+
+
+                // Tambahkan chapter lain jika ada
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('comic-main-title').textContent = comicData.mainTitle || comicData.title;
+            document.getElementById('comic-title-detail').textContent = comicData.title;
+            document.getElementById('comic-description').textContent = comicData.description;
+            document.getElementById('comic-cover').src = comicData.cover;
+            document.getElementById('comic-cover').alt = `Cover ${comicData.title}`;
+
+            const chaptersList = document.getElementById('chapters');
+            comicData.chapters.forEach((chapter, index) => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                // Kita akan mengirim data chapter melalui URL atau localStorage
+                link.href = `reader.html?chapter=${index}`;
+                link.textContent = chapter.title;
+                listItem.appendChild(link);
+                chaptersList.appendChild(listItem);
+            });
+
+            // Simpan data komik ke localStorage agar bisa diakses oleh reader.html
+            localStorage.setItem('singleComicData', JSON.stringify(comicData));
+        });
+    </script>
+
+ <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/683512978c4ed918fea47e58/1is7l180o';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+</body>
+</html>
