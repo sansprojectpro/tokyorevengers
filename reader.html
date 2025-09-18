@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baca Komik</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.jpg" type="image/png">
+</head>
+<body>
+  <header>
+    <a href="index.html"><h1 id="reader-comic-title"></h1></a>
+    <h2 id="chapter-title-reader"></h2>
+  </header>
+
+  <main class="comic-reader">
+    <div id="comic-panels"></div>
+
+    <div class="chapter-navigation-reader">
+      <a id="prev-chapter" href="#" style="display:none;">&laquo; Chapter Sebelumnya</a>
+      <a id="back-to-home" href="index.html">Kembali ke Info Komik</a>
+      <a id="next-chapter" href="#" style="display:none;">Chapter Berikutnya &raquo;</a>
+    </div>
+  </main>
+
+  <footer>
+    <p id="footer-comic-title">&copy; 2025</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const chapterIndex = parseInt(urlParams.get('chapter'));
+
+      const comicDataString = localStorage.getItem('singleComicData');
+      if (!comicDataString) {
+        document.getElementById('comic-panels').innerHTML = "<p>Data komik tidak ditemukan. Silakan kembali ke halaman utama.</p>";
+        return;
+      }
+      const comicData = JSON.parse(comicDataString);
+
+      document.getElementById('reader-comic-title').textContent = comicData.mainTitle || comicData.title;
+      document.getElementById('footer-comic-title').textContent = `© 2025 ${comicData.title}`;
+
+      if (isNaN(chapterIndex) || chapterIndex < 0 || chapterIndex >= comicData.chapters.length) {
+        document.getElementById('comic-panels').innerHTML = "<p>Chapter tidak ditemukan.</p>";
+        return;
+      }
+
+      const currentChapter = comicData.chapters[chapterIndex];
+      document.getElementById('chapter-title-reader').textContent = `${comicData.title} - ${currentChapter.title}`;
+
+      const comicPanelsContainer = document.getElementById('comic-panels');
+      const suffix = currentChapter.pageNameSuffix || "";
+
+      // Tampilkan semua halaman
+      for (let i = 1; i <= currentChapter.pageCount; i++) {
+        const img = document.createElement('img');
+        img.src = `${currentChapter.pagesPath}${i}${suffix}.${currentChapter.pageExtension}`;
+        img.alt = `Halaman ${i}`;
+        img.onerror = function() {
+          this.alt = 'Gambar tidak dapat dimuat.';
+          this.style.border = "2px solid red";
+        };
+        comicPanelsContainer.appendChild(img);
+      }
+
+      // Navigasi antar chapter
+      const prevChapterLink = document.getElementById('prev-chapter');
+      const nextChapterLink = document.getElementById('next-chapter');
+
+      if (chapterIndex > 0) {
+        prevChapterLink.href = `reader.html?chapter=${chapterIndex - 1}`;
+        prevChapterLink.style.display = 'inline-block';
+      }
+      if (chapterIndex < comicData.chapters.length - 1) {
+        nextChapterLink.href = `reader.html?chapter=${chapterIndex + 1}`;
+        nextChapterLink.style.display = 'inline-block';
+      }
+    });
+  </script>
+
+</body>
+</html>
